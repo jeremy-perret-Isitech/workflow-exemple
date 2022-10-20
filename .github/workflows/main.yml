@@ -1,0 +1,15 @@
+name: run-test-js
+run-name: ${{ github.actor }} init Jest test
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - uses: actions/checkout@v2
+      - run: npm install -g bats
+      - run: bats -v
+      - run: npm install -g jest
+      - run: npm run test
