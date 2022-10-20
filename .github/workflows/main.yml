@@ -9,7 +9,5 @@ jobs:
         with:
           node-version: '14'
       - uses: actions/checkout@v2
-      - run: npm install -g bats
-      - run: bats -v
       - run: npm install -g jest
       - run: npm run test
